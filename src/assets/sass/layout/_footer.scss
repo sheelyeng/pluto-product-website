@@ -1,0 +1,97 @@
+.footer {
+  width: 100%;
+
+
+  padding: 5rem 0 3rem;
+  background-color: $color-bg-light-sec;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    margin: 0 auto;
+    max-width: 158rem;
+    width: 95%;
+  }
+
+
+  h3 {
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 5.6rem;
+    text-align: center;
+  }
+
+
+  p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    opacity: 0.8;
+
+    margin: 2.2rem 0 5rem;
+    max-width: 79rem;
+    width: 90%;
+  }
+
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    padding-top: 2rem;
+
+    border-top: 1px solid rgba(#FFFFFF, 0.25);
+
+
+    &__logo {
+      width: 5.34rem;
+      height: 5.34rem;
+    }
+
+    h5 {
+      font-weight: 400;
+      font-size: 1.7rem;
+      line-height: 1.4rem;
+      text-align: center;
+
+    }
+
+    &__links {
+
+      display: flex;
+      gap: 1.135rem;
+
+      a {
+        width: 4.672rem;
+        height: 4.655rem;
+        border: 1.5px solid rgba(#FFFFFF, 0.25);
+        box-sizing: border-box;
+        border-radius: 1.95rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+      }
+
+      .discordImg {
+        width: 2.2rem;
+        height: 1.6rem;
+      }
+
+      .twitterImg {
+        width: 1.537rem;
+        height: 1.313rem;
+      }
+
+
+    }
+
+  }
+
+}

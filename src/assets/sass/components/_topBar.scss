@@ -1,0 +1,50 @@
+.topBar {
+
+  position: absolute;
+  top: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+
+  width: 79.6875%;
+  height: 10rem;
+  padding: 1.8rem 5.2rem 1.8rem 4rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: linear-gradient(99.52deg, rgba(255, 255, 255, 0.026) 28.93%, rgba(255, 255, 255, 0.042) 73.52%);
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  box-sizing: border-box;
+  backdrop-filter: blur(5rem);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 1.6rem;
+
+
+  &__logo {
+    width: 6.3rem;
+    height: 6.3rem;
+    transform: rotate(-12.39deg);
+  }
+
+  h5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 0.89;
+    text-align: center;
+
+    img {
+      width: 1.55rem;
+      height: 1.6rem;
+    }
+
+  }
+
+}

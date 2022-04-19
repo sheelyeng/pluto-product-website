@@ -1,0 +1,116 @@
+.pricingBox {
+
+  display: flex;
+  flex-flow: row wrap;
+
+  width: 47.8rem;
+
+  background: linear-gradient(230.15deg, rgba(255, 255, 255, 0.148) -1.91%, rgba(196, 196, 196, 0) 103.88%, rgba(196, 196, 196, 0) 103.88%);
+  filter: drop-shadow(0px 4px 75px rgba(0, 0, 0, 0.25));
+  border-radius: 2rem;
+  overflow: hidden;
+
+  &:nth-of-type(2n) {
+    .pricingBox__price {
+      background: linear-gradient(199.47deg, #3600FF -2.22%, #FF9B9B 132.19%);
+    }
+  }
+
+  &:nth-of-type(3n) {
+    .pricingBox__price {
+      background: linear-gradient(199.47deg, #6A2000 -2.22%, #FF9B9B 132.19%);
+    }
+  }
+
+  &__content {
+    padding: 4rem 0 7.5rem 6.5rem;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    width: 62.5%;
+
+    h2 {
+      font-weight: 800;
+      font-size: 33px;
+      line-height: 118%;
+      margin-left: 0.8rem;
+    }
+
+    &__list {
+      margin: 3.5rem 0 4rem 0.3rem;
+
+      &__item {
+        display: flex;
+        align-items: center;
+        gap: 1.869rem;
+
+        img {
+          width: 2.731rem;
+          height: 2.731rem;
+          opacity: 0.7;
+        }
+
+        h4 {
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 118%;
+          opacity: 0.7;
+        }
+
+        &:not(:last-of-type) {
+          margin-bottom: 2.369rem;
+        }
+
+
+        &.disabled {
+
+
+          img, h4 {
+            opacity: 0.2;
+            text-decoration-line: line-through;
+          }
+
+
+        }
+
+      }
+
+    }
+
+    a {
+      padding-left: 4.1rem;
+      padding-right: 3.7rem;
+    }
+
+  }
+
+
+  &__price {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 37.5%;
+
+    flex-flow: column;
+
+    background: linear-gradient(199.47deg, #2F2F2F -2.22%, #9BFFC3 132.19%);
+
+
+    h5 {
+      font-weight: 800;
+      font-size: 3.3rem;
+      line-height: 118%;
+      text-align: center;
+
+      &.text-light-opacity {
+        opacity: 0.63;
+        font-size: 2.7rem;
+        line-height: 3.186rem;
+        font-weight: 500;
+      }
+    }
+
+  }
+
+}
