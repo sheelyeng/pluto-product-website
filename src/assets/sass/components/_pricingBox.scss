@@ -10,15 +10,36 @@
   border-radius: 2rem;
   overflow: hidden;
 
+
+  @media screen and (max-width: 1350px){
+    max-width: 52rem;
+    width: 75%;
+  }
+
+  @media screen and (max-width: 650px){
+    flex-flow: column;
+    padding: 3.8rem 0 2.7rem;
+    justify-content: center;
+  }
+
+
   &:nth-of-type(2n) {
     .pricingBox__price {
       background: linear-gradient(199.47deg, #3600FF -2.22%, #FF9B9B 132.19%);
+
+      @media screen and (max-width: 650px){
+        background: unset;
+      }
     }
   }
 
   &:nth-of-type(3n) {
     .pricingBox__price {
       background: linear-gradient(199.47deg, #6A2000 -2.22%, #FF9B9B 132.19%);
+      @media screen and (max-width: 650px){
+        background: unset;
+      }
+
     }
   }
 
@@ -29,15 +50,27 @@
     align-items: flex-start;
     width: 62.5%;
 
+    @media screen and (max-width: 650px){
+      width: 100%;
+      padding: 0;
+      align-items: center;
+    }
+
+
     h2 {
       font-weight: 800;
-      font-size: 33px;
+      font-size: 3.3rem;
       line-height: 118%;
       margin-left: 0.8rem;
     }
 
     &__list {
       margin: 3.5rem 0 4rem 0.3rem;
+
+      @media screen and (max-width: 650px){
+        margin: 4.1rem 0 3rem 0.6rem;
+      }
+
 
       &__item {
         display: flex;
@@ -86,30 +119,52 @@
 
 
   &__price {
-
     display: flex;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
     width: 37.5%;
 
-    flex-flow: column;
-
     background: linear-gradient(199.47deg, #2F2F2F -2.22%, #9BFFC3 132.19%);
 
+    font-weight: 800;
+    font-size: 3.3rem;
+    line-height: 118%;
+    text-align: center;
 
-    h5 {
-      font-weight: 800;
-      font-size: 3.3rem;
-      line-height: 118%;
-      text-align: center;
 
-      &.text-light-opacity {
-        opacity: 0.63;
-        font-size: 2.7rem;
-        line-height: 3.186rem;
-        font-weight: 500;
+    span{
+      @media screen and (min-width: 651px){
+        display: none;
       }
     }
+
+
+    @media screen and (max-width: 650px){
+      width: 100%;
+      background: unset;
+      margin-top: 2.5rem;
+      flex-flow: row;
+
+      color: rgba(255, 255, 255, 0.54);
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+
+    h5.text-light-opacity {
+      opacity: 0.63;
+      font-size: 2.7rem;
+      font-weight: 500;
+
+      @media screen and (max-width: 650px){
+        font-size: 2rem;
+        font-weight: 700;
+        opacity: unset;
+      }
+
+    }
+
 
   }
 

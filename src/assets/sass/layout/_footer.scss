@@ -2,7 +2,6 @@
   width: 100%;
 
 
-  padding: 5rem 0 3rem;
   background-color: $color-bg-light-sec;
 
   &__container {
@@ -13,27 +12,60 @@
     margin: 0 auto;
     max-width: 158rem;
     width: 95%;
+
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+    }
+
   }
 
 
-  h3 {
-    font-weight: 700;
-    font-size: 4rem;
-    line-height: 5.6rem;
-    text-align: center;
-  }
+  &__top {
+
+    padding: 5rem 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.2rem;
+
+    @media screen and (max-width: 1000px) {
+      max-width: 67.1467%;
+      padding: 5.5rem 0 9rem;
+      gap: 5.5rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      max-width: 74.1%;
+      padding: 4.2rem 0 5.8rem;
+      gap: 4.5rem;
+    }
 
 
-  p {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 28px;
-    text-align: center;
-    opacity: 0.8;
+    h3 {
+      font-weight: 700;
+      font-size: 4rem;
+      line-height: 5.6rem;
+      text-align: center;
+    }
 
-    margin: 2.2rem 0 5rem;
-    max-width: 79rem;
-    width: 90%;
+    p {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 28px;
+      text-align: center;
+      opacity: 0.8;
+
+      max-width: 79rem;
+      width: 90%;
+
+      @media screen and (max-width: 600px) {
+        width: 100%;
+      }
+
+    }
+
+
   }
 
 
@@ -42,15 +74,27 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-
-    padding-top: 2rem;
-
+    padding: 2rem 0 3rem;
     border-top: 1px solid rgba(#FFFFFF, 0.25);
+
+
+    @media screen and (max-width: 1000px) {
+      flex-flow: column;
+      padding: 5.1rem 0 7.1rem;
+      background-color: $color-bg;
+      border-top: unset;
+    }
+
+    @media screen and (max-width: 600px) {
+      padding: 3.3rem 0 5.5rem;
+    }
 
 
     &__logo {
       width: 5.34rem;
       height: 5.34rem;
+      transform: rotate(-12.39deg);
+
     }
 
     h5 {
@@ -58,6 +102,10 @@
       font-size: 1.7rem;
       line-height: 1.4rem;
       text-align: center;
+
+      @media screen and (max-width: 1000px) {
+        margin: 3.6rem 0 2.8rem;
+      }
 
     }
 

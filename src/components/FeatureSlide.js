@@ -1,14 +1,18 @@
-import { SwiperSlide } from 'swiper/react';
-import eth from '../assets/img/eth-dynamic-gradient.png';
+import PropTypes from 'prop-types';
 
-function FeatureSlide() {
+function FeatureSlide({ title, icon }) {
   return (
-    <SwiperSlide>
-      <img src={eth} alt="" />
-      <h4>NFT Address Visualizer</h4>
+    <div className="featureSlide">
+      <img src={icon} alt="" />
+      <h4>{title}</h4>
       <div className="circleSeparator" />
-    </SwiperSlide>
+    </div>
   );
 }
+
+FeatureSlide.propTypes = {
+  title: PropTypes.string,
+  icon: PropTypes.any
+};
 
 export default FeatureSlide;
