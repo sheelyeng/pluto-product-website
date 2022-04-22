@@ -1,24 +1,177 @@
+import React, { useEffect } from 'react';
 import HeaderTopBar from '../../components/HeaderTopBar';
 import flash from '../../assets/img/flash-dynamic-gradient.png';
 import flashWhite from '../../assets/img/flash-dynamic-gradient-white.png';
 import moonGradientWhite from '../../assets/img/moon-front-gradient.png';
+import anime from 'animejs';
+import { SplitText } from '@cyriacbr/react-split-text';
 
-function Features() {
+const Hero = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      const timeline = anime.timeline({ autoplay: true });
+      timeline
+        .add(
+          {
+            targets: '.sHero__top h1 .heroHeadlineWord',
+            translateY: ['110%', '0%'],
+            opacity: [0, 1],
+            duration: 450,
+            delay: anime.stagger(20),
+            easing: 'easeOutSine'
+          },
+          1000
+        )
+        .add(
+          {
+            targets: '.sHero__top h1 .flashIcon',
+            translateY: ['50%', '0%'],
+            opacity: [0, 1],
+            duration: 400,
+            easing: 'easeOutSine'
+          },
+          1300
+        )
+
+        .add(
+          {
+            targets: '.sHero__top .sHero__top__text .heroTextWord',
+            translateY: ['30%', '0%'],
+            opacity: [0, 1],
+            duration: 350,
+            delay: anime.stagger(16),
+            easing: 'easeOutSine'
+          },
+          1800
+        )
+        .add(
+          {
+            targets: '.sHero__top .sHero__top__buttons .btn',
+            scale: ['0%', '100%'],
+            duration: 430,
+            delay: anime.stagger(160),
+            easing: 'easeOutBack'
+          },
+          1970
+        );
+
+      //Illustration starts from 9330
+      const contentTimeline = anime.timeline({
+        autoplay: true //TODO: remove autoplay when done
+      });
+      contentTimeline
+        //TODO: remove when done
+        .add({
+          targets: '.sHero__bottom .dummyAnim',
+          duration: 1000,
+          easing: 'easeInSine'
+        })
+        .add({
+          targets: '.sHero__bottom .sHero__bottom__illustration',
+          scaleX: ['0%', '100%'],
+          duration: 270,
+          easing: 'easeInSine'
+        })
+        .add(
+          {
+            targets: '.sHero__bottom .sHero__bottom__illustration__top__rect',
+            scaleX: ['0%', '100%'],
+            duration: 230,
+            easing: 'easeInSine'
+          },
+          '-=30'
+        )
+        .add(
+          {
+            targets: '.sHero__bottom .leftCircle',
+            scale: ['0%', '100%'],
+            duration: 200,
+            easing: 'easeInSine'
+          },
+          '-=200'
+        )
+        .add(
+          {
+            targets: '.sHero__bottom .sHero__bottom__illustration__logoBox',
+            scale: ['0%', '100%'],
+            duration: 600,
+            easing: 'easeOutBounce'
+          },
+          '-=200'
+        )
+        .add(
+          {
+            targets: '.sHero__bottom .sHero__bottom__illustration__logoBox img',
+            scale: [
+              {
+                value: '100%',
+                duration: 0
+              },
+              {
+                value: '250%',
+                duration: 200
+              },
+              {
+                value: '100%',
+                duration: 200
+              }
+            ],
+            rotate: [
+              {
+                value: '-12.39deg',
+                duration: 200
+              },
+              {
+                value: '180deg',
+                duration: 200
+              },
+              {
+                value: '360deg',
+                duration: 200
+              }
+            ],
+            easing: 'easeInSine'
+          },
+          '-=400'
+        );
+    }, 0);
+  }, []);
+
   return (
     <section className="sHero">
       <HeaderTopBar />
 
       <div className="sHero__top flex-center">
         <h1>
-          Your
-          <span>
+          <SplitText
+            LetterWrapper={({ children }) => <span className="heroHeadlineWord">{children}</span>}>
+            Your
+          </SplitText>
+          <span className="flashIcon">
             <img src={flash} alt="" />
           </span>
-          <span className="word-favorite">favorite</span> companion for your NFT journey
+          <span className="word-favorite">
+            <SplitText
+              LetterWrapper={({ children }) => (
+                <span className="heroHeadlineWord">{children}</span>
+              )}>
+              favorite
+            </SplitText>
+          </span>
+          <span>&nbsp;</span>
+          <SplitText
+            LetterWrapper={({ children }) => <span className="heroHeadlineWord">{children}</span>}>
+            companion for your NFT journey
+          </SplitText>
         </h1>
-        <p>
-          An innovative browser extension to have all the informations you want accessible quickly.
-        </p>
+        <div className="sHero__top__text">
+          <SplitText
+            LineWrapper={({ children }) => <span>{children}</span>}
+            LetterWrapper={({ children }) => <span className="heroTextWord">{children}</span>}>
+            An innovative browser extension to have all the informations you want accessible
+            quickly.
+          </SplitText>
+        </div>
         <div className="sHero__top__buttons">
           <a href="#" className="btn btn--primary">
             Try it
@@ -37,7 +190,7 @@ function Features() {
           </div>
           <div className="sHero__bottom__illustration__top">
             <div className="sHero__bottom__illustration__top__rect" />
-            <div className="sHero__bottom__illustration__top__circle" />
+            <div className="sHero__bottom__illustration__top__circle leftCircle" />
             <div className="sHero__bottom__illustration__top__circle lastCircle" />
           </div>
           <div className="sHero__bottom__illustration__boxFull" />
@@ -59,6 +212,6 @@ function Features() {
       </div>
     </section>
   );
-}
+};
 
-export default Features;
+export default Hero;

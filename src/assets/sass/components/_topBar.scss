@@ -1,9 +1,12 @@
 .topBar {
 
-  position: absolute;
+  position: fixed;
   top: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
+  z-index: 1000;
+  //left: 50%;
+  //transform: translateX(-50%);
+  margin: 0 auto;
+  transform-origin: center center;
 
 
   width: 79.6875%;
@@ -58,10 +61,22 @@
     line-height: 0.89;
     text-align: center;
 
-    img {
+    .topBarWord{
+      display: inline-block;
+    }
+
+    .imgCont{
       width: 1.55rem;
       height: 1.6rem;
+      overflow: hidden;
+
+
+      img {
+        width: 1.55rem;
+        height: 1.6rem;
+      }
     }
+
 
   }
 

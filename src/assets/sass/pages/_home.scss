@@ -16,7 +16,8 @@
 
   &__top {
     margin-top: 32.7rem;
-    width: 75.5%;
+    //width: 75.5%;
+    width: 76.5%;
 
     flex-flow: column;
 
@@ -46,6 +47,7 @@
       font-size: 12rem;
       line-height: 1.1833;
       text-align: center;
+      letter-spacing: -0.002em;
 
       @media screen and (max-width: 1500px) {
         font-size: 10rem;
@@ -64,8 +66,18 @@
       }
 
 
-      span {
+
+      & *{
+        display: inline-block;
+      }
+
+      & > *{
         display: inline;
+      }
+
+
+      span {
+        display: inline-block;
 
         img {
           width: 9.6rem;
@@ -92,43 +104,48 @@
           }
 
         }
-
       }
 
       .word-favorite {
+        //display: inline-block;
+
         position: relative;
-        //linear-gradient(93.61deg, #AB5BDB 23.85%, #FFA370 100%)
-        background: linear-gradient(93.61deg, #AB5BDB 23.85%, #FFA370 55.85%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;
+        //linear-gradient:(93.61deg, #AB5BDB 23.85%, #FFA370 100%);
+        //background: linear-gradient(93.61deg, #AB5BDB 23.85%, #FFA370 55.85%);
+        //-webkit-background-clip: text;
+        //-webkit-text-fill-color: transparent;
+        //background-clip: text;
+        //text-fill-color: transparent;
 
 
-        &:after {
-          content: "favorite";
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-
-          height: 100%;
-          transform: translate(-0.3%, 18%);
-
-          background: linear-gradient(93.61deg, rgba(171, 91, 219, 0.2) 23.85%, rgba(255, 163, 112, 0.2) 55.85%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          text-fill-color: transparent;
-
-          //border: 1px solid red;
-        }
+        //&:after {
+        //  content: "favorite";
+        //  display: inline-block;
+        //  position: absolute;
+        //  bottom: 0;
+        //  left: 0;
+        //  height: 100%;
+        //  width: 100%;
+        //  max-width: 100%;
+        //  //transform: translate(-0.3%, 18%);
+        //  background: linear-gradient(93.61deg, rgba(171, 91, 219, 0.2) 23.85%, rgba(255, 163, 112, 0.2) 55.85%);
+        //  -webkit-background-clip: text;
+        //  -webkit-text-fill-color: transparent;
+        //  background-clip: text;
+        //  text-fill-color: transparent;
+        //
+        //  //border: 1px solid red;
+        //  //color: red;
+        //  text-align: left;
+        //  letter-spacing: 0.011em;
+        //  //border: 1px solid red;
+        //}
 
       }
 
     }
 
-    p {
+    &__text {
       font-weight: 400;
       font-size: 2.2rem;
       line-height: 118%;
@@ -145,6 +162,10 @@
       @media screen and (max-width: 600px) {
         margin: 2.1rem 0 6.7rem;
         width: 85%;
+      }
+
+      span{
+        display: inline-block;
       }
 
     }
