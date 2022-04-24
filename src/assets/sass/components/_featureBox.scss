@@ -16,16 +16,18 @@
   gap: 2.9rem;
   position: relative;
 
-  transition: all 0.2s ease-in-out;
+  transition: box-shadow 0.1s ease-in-out;
+  cursor: pointer;
 
-  &.spacingSm{
+  &.spacingSm {
     gap: 1.4rem;
   }
 
   img {
+    min-width: 12rem;
+    min-height: 12rem;
     width: 12rem;
     height: 12rem;
-
   }
 
   h3 {
@@ -40,12 +42,12 @@
   }
 
 
-  &:hover{
+  &:hover {
     background: linear-gradient(210.96deg, rgba(36, 33, 81, 0.74) 0.01%, rgba(38, 35, 83, 0.78) 42.05%, rgba(47, 45, 97, 0.51) 104.81%);
     box-shadow: 0 4px 0 rgba(255, 255, 255, 0.25), 0 5px 73.2692px rgba(23, 18, 43, 0.55);
-    backdrop-filter: blur(20.3526px);
+    //backdrop-filter: blur(20.3526px);
 
-    @media screen and (max-width: 500px){
+    @media screen and (max-width: 500px) {
       box-shadow: 0 4px 0 rgba(255, 255, 255, 0.25), 0 4px 73.2692px rgba(23, 18, 43, 0.55);
     }
 

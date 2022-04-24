@@ -18,6 +18,10 @@
 
     padding: 2rem 4.4rem 2.2rem;
 
+    &:hover, &:active{
+      box-shadow: 0 0.2rem 0 #888BFF;
+    }
+
   }
 
   &--secondary{
@@ -30,9 +34,11 @@
     line-height: 0.89;
     font-weight: 800;
     text-align: center;
-
-
     padding: 2rem 4.4rem 2.2rem;
+
+    &:hover, &:active{
+      box-shadow: 0 2px 0 #D97A8C, 0px 0px 43px 6px rgba(195, 101, 114, 0.57);
+    }
 
   }
 

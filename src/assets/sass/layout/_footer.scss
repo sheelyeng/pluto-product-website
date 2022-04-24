@@ -125,6 +125,11 @@
         justify-content: center;
         align-items: center;
 
+        transition:all 0.2s ease-in-out;
+        &:hover{
+          border-radius: 100%;
+          border: 1.5px solid rgba(#FFFFFF, 1);
+        }
       }
 
       .discordImg {

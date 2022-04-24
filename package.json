@@ -11,6 +11,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.1",
+    "react-visibility-sensor": "^5.1.1",
     "sass": "^1.50.1",
     "swiper": "^8.1.1",
     "web-vitals": "^2.1.4"
@@ -43,10 +44,18 @@
     ]
   },
   "devDependencies": {
+    "customize-cra": "^1.0.0",
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
-    "prettier": "^2.6.2"
+    "prettier": "^2.6.2",
+    "react-app-rewired": "^2.2.1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
   }
 }

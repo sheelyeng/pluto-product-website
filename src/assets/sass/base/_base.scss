@@ -111,12 +111,20 @@ body {
   background-color: $color-bg;
   min-height: 100vh;
   position: relative;
+  //user-select: none;
 }
 
 img {
   max-width: 100%;
   width: auto;
   height: 100%;
+}
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
 }
 
 svg {
@@ -131,7 +139,7 @@ svg:hover {
 }
 
 a:focus, a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -158,4 +166,21 @@ button:disabled {
 #root {
   width: 100%;
   height: auto;
+}
+
+
+span{
+  display: inline-block;
+}
+
+section{
+  position: relative;
+  .sectionRefChecker{
+    position: absolute;top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+  }
 }
