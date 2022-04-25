@@ -10,7 +10,8 @@ import 'swiper/css';
 
 import { freeTools, premiumTools } from '../../assets/data/toolsData';
 
-const Hero = () => {
+const temp = true;
+const Features = () => {
   const ref = useRef();
 
   // const [isMobile, setIsMobile] = useState(false);
@@ -19,6 +20,7 @@ const Hero = () => {
 
   useEffect(() => {
     setTimeout(() => {
+      if (temp) return;
       //16350
       timeline
         .add({
@@ -186,4 +188,4 @@ const PremiumToolsSlider = () => (
   </Swiper>
 );
 
-export default Hero;
+export default Features;

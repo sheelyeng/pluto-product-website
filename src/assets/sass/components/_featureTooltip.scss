@@ -1,0 +1,179 @@
+.featureTooltip{
+
+  //display: none;
+  z-index: 100;
+
+  width: 100%;
+  //min-height: 48rem;
+
+  background: linear-gradient(210.96deg, rgba(36, 33, 81, 0.74) 0.01%, rgba(38, 35, 83, 0.78) 42.05%, rgba(47, 45, 97, 0.51) 104.81%);
+  backdrop-filter: blur(20.3526px);
+  border-radius: 9.22518px;
+
+  overflow: hidden;
+
+
+
+  &__headline{
+    font-weight: 800;
+    font-size: 3.3rem;
+    line-height: 118%;
+    color: #FFFFFF;
+    padding: 3.8rem;
+
+    @media screen and (max-width: 1000px) {
+      padding: 2.6rem 3.3rem;
+
+    }
+
+    @media screen and (max-width: 600px) {
+      padding: 2.9rem 3.3rem 1.7rem;
+    }
+
+  }
+
+
+
+  &__divider{
+    width: 100%;
+    height: 0.2rem;
+    background: rgba(255, 255, 255, 0.14);
+    padding-left: 6.2rem;
+    padding-right: 3.4rem;
+
+    @media screen and (max-width: 1000px) {
+      padding-left: 3.6rem;
+      padding-right: 3rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      padding:0 3.6rem;
+      text-align: center;
+    }
+
+  }
+
+
+  &__content{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 3.6rem 3.4rem 0 6.7rem;
+
+
+    @media screen and (max-width: 1000px) {
+      padding: 5.7rem 4.2rem 0 5.7rem;
+
+    }
+
+    @media screen and (max-width: 600px) {
+      padding: 2.7rem 4.1rem 0 5.7rem;
+    }
+
+
+
+    &__text{
+      width: 52.5%;
+      padding-bottom: 6rem;
+
+      @media screen and (max-width: 600px) {
+        width: 100%;
+      }
+
+
+      &__box{
+
+
+        &:not(:last-of-type){
+          padding-bottom: 1.4rem;
+        }
+
+
+        &__headline{
+          display: flex;
+          align-items: center;
+          padding: 1.1rem 0;
+
+          font-weight: 800;
+          font-size: 2.5rem;
+          line-height: 118%;
+          color: #FFFFFF;
+
+
+          img{
+            margin-right: 1.5rem;
+            width: 3.2rem;
+            height: 3.2rem;
+
+          }
+
+        }
+
+        p{
+          font-weight: 400;
+          font-size: 1.5rem;
+          line-height: 2.4rem;
+          /* or 157% */
+          color: rgba(255, 255, 255, 0.75);
+          margin-top: 0.6rem;
+
+          @media screen and (max-width: 1000px) {
+            font-size: 1.4rem;
+          }
+
+        }
+
+      }
+
+
+    }
+
+
+    &__image{
+      width: 38.5%;
+
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
+
+      img{
+        object-fit: contain;
+      }
+    }
+
+
+  }
+
+
+}
+
+
+.rc-tooltip{
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  visibility: visible;
+  //line-height: 1.5;
+  //font-size: 12px;
+  //background-color: rgba(0, 0, 0, 0.05);
+  padding-top: 2.6rem;
+  opacity: 1;
+
+  max-width: 88.3rem;
+  width: 90%;
+  //min-height: 48rem;
+
+  @media screen and (max-width: 1000px) {
+    width: 76.618705036%;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 84.112149533%;
+    padding-top: 2rem;
+  }
+
+}
+
+.rc-tooltip-hidden {
+  display: none;
+}
