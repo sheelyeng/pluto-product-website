@@ -17,6 +17,7 @@ const Features = () => {
 
   const [isVisible, setIsVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isScreenMD, setIsScreenMD] = useState(false);
   const [isAnimated, setIsAnimated] = useState(false);
   const [isAnimationApplied, setIsAnimationApplied] = useState(false);
 
@@ -72,6 +73,7 @@ const Features = () => {
 
   useEffect(() => {
     if (window.outerWidth <= 500) setIsMobile(true);
+    else if (window.outerWidth <= 1650 && window.outerWidth >= 600) setIsScreenMD(true);
   }, []);
 
   useEffect(() => {
@@ -146,7 +148,10 @@ const Features = () => {
             <h2>{subheadline1}</h2>
             <div className="sFeatures__section__divider" />
             <div className="sFeatures__section__boxes">
-              {!isMobile && freeTools.map((feat, index) => <FeatureBox key={index} {...feat} />)}
+              {!isMobile &&
+                freeTools.map((feat, index) => (
+                  <FeatureBox key={index} {...feat} isScreenMD={isScreenMD} />
+                ))}
 
               {isMobile && (
                 <div className="sFeatures__section__boxes__slider">
@@ -160,7 +165,10 @@ const Features = () => {
 
             <div className="sFeatures__section__divider" />
             <div className="sFeatures__section__boxes">
-              {!isMobile && premiumTools.map((feat, index) => <FeatureBox key={index} {...feat} />)}
+              {!isMobile &&
+                premiumTools.map((feat, index) => (
+                  <FeatureBox key={index} {...feat} isScreenMD={isScreenMD} />
+                ))}
 
               {isMobile && (
                 <div className="sFeatures__section__boxes__slider premiumSlider">

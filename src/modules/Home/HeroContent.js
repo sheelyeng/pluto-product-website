@@ -195,6 +195,7 @@ const HeroContent = () => {
   return (
     <ReactVisibilitySensor
       partialVisibility
+      minTopValue={100}
       onChange={visibilityChangeHandler}
       scrollCheck={true}
       active={true}>

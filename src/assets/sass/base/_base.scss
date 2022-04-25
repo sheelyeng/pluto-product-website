@@ -84,6 +84,15 @@ sup {
 
 html {
 
+  @media screen and (max-width: 1910px) {
+    font-size: 50%; //1rem =9px
+  }
+
+
+  @media screen and (max-width: 1000px) {
+    font-size: 62.5%; //1rem =10px
+  }
+
   font-size: 62.5%; //1rem =10px
 
   //@media screen and (max-width: 75em) { //1200px
