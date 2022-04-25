@@ -6,10 +6,14 @@ import PriceBox from '../../components/PriceBox';
 
 import { pricingData } from '../../assets/data/pricingData';
 
+let timeline = anime.timeline({ autoplay: false });
+
 function Pricing() {
-  const [isAnimated, setIsAnimated] = useState(false);
   const ref = useRef();
-  let timeline = anime.timeline({ autoplay: false });
+
+  const [isAnimated, setIsAnimated] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isAnimationApplied, setIsAnimationApplied] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -33,13 +37,16 @@ function Pricing() {
           },
           '-=100'
         );
-      // setAnimTimeline(timeline);
+      setIsAnimationApplied(true);
     }, 0);
   }, []);
 
-  const visibilityChangeHandler = (isVisible) => {
-    if (isAnimated || !isVisible || !ref.current) return;
+  useEffect(() => {
+    animateSection();
+  }, [isAnimated, isVisible, isAnimationApplied]);
 
+  const animateSection = () => {
+    if (isAnimated || !isVisible || !ref.current || !isAnimationApplied) return;
     setIsAnimated(true);
     window.scrollTo({
       top: ref.current.offsetTop,
@@ -47,6 +54,10 @@ function Pricing() {
       behavior: 'smooth'
     });
     timeline.play();
+  };
+
+  const visibilityChangeHandler = (isVisible) => {
+    setIsVisible(isVisible);
   };
 
   const headline = useMemo(

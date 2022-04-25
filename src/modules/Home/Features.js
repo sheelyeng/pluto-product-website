@@ -10,17 +10,20 @@ import 'swiper/css';
 
 import { freeTools, premiumTools } from '../../assets/data/toolsData';
 
-const temp = true;
+let timeline = anime.timeline({ autoplay: false });
+
 const Features = () => {
   const ref = useRef();
 
-  // const [isMobile, setIsMobile] = useState(false);
-  const [isTopAnimated, setIsTopAnimated] = useState(false);
-  const timeline = anime.timeline({ autoplay: false });
+  const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isAnimated, setIsAnimated] = useState(false);
+  const [isAnimationApplied, setIsAnimationApplied] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
-      if (temp) return;
+      timeline = anime.timeline({ autoplay: false });
+
       //16350
       timeline
         .add({
@@ -63,23 +66,31 @@ const Features = () => {
           },
           1000
         );
+      setIsAnimationApplied(true);
     }, 0);
+  }, [isMobile]);
+
+  useEffect(() => {
+    if (window.outerWidth <= 500) setIsMobile(true);
   }, []);
 
   useEffect(() => {
-    // if (window.outerWidth <= 500) setIsMobile(true);
-  }, []);
+    animateSection();
+  }, [isAnimated, isVisible, isAnimationApplied]);
 
-  const visibilityChangeHandler = (isVisible) => {
-    if (isTopAnimated || !isVisible || !ref.current) return;
-
-    setIsTopAnimated(true);
+  const animateSection = () => {
+    if (isAnimated || !isVisible || !ref.current || !isAnimationApplied) return;
+    setIsAnimated(true);
     window.scrollTo({
       top: ref.current.offsetTop,
       left: 0,
       behavior: 'smooth'
     });
     timeline.play();
+  };
+
+  const visibilityChangeHandler = (isVisible) => {
+    setIsVisible(isVisible);
   };
 
   const headline = useMemo(
@@ -123,7 +134,7 @@ const Features = () => {
   return (
     <ReactVisibilitySensor
       partialVisibility
-      minTopValue={50}
+      minTopValue={300}
       onChange={visibilityChangeHandler}
       scrollCheck={true}
       active={true}>
@@ -135,15 +146,13 @@ const Features = () => {
             <h2>{subheadline1}</h2>
             <div className="sFeatures__section__divider" />
             <div className="sFeatures__section__boxes">
-              {freeTools.map((feat, index) => (
-                <FeatureBox key={index} {...feat} />
-              ))}
+              {!isMobile && freeTools.map((feat, index) => <FeatureBox key={index} {...feat} />)}
 
-              {
+              {isMobile && (
                 <div className="sFeatures__section__boxes__slider">
                   <FreeToolsSlider />
                 </div>
-              }
+              )}
             </div>
           </div>
           <div className="sFeatures__section">
@@ -151,15 +160,13 @@ const Features = () => {
 
             <div className="sFeatures__section__divider" />
             <div className="sFeatures__section__boxes">
-              {premiumTools.map((feat, index) => (
-                <FeatureBox key={index} {...feat} />
-              ))}
+              {!isMobile && premiumTools.map((feat, index) => <FeatureBox key={index} {...feat} />)}
 
-              {
+              {isMobile && (
                 <div className="sFeatures__section__boxes__slider premiumSlider">
                   <PremiumToolsSlider />
                 </div>
-              }
+              )}
             </div>
           </div>
         </div>
