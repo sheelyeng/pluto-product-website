@@ -70,7 +70,9 @@ const HeroFront = () => {
         <span className="word-favorite">
           <SplitText
             LetterWrapper={({ children }) => (
-              <span className="heroHeadlineLetter">{children}</span>
+              <span className={`heroHeadlineLetter letter-${children}`} text={children}>
+                <span>{children}</span>
+              </span>
             )}>
             favorite
           </SplitText>
