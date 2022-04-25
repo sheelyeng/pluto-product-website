@@ -17,7 +17,8 @@
   &__top {
     margin-top: 32.7rem;
     //width: 75.5%;
-    width: 76.5%;
+    //width: 76.5%;
+    width: 82.5%;
 
     display: flex;
     flex-flow: column;
@@ -122,6 +123,15 @@
         //-webkit-text-fill-color: transparent;
         //background-clip: text;
         //text-fill-color: transparent;
+
+        span{
+          //background: linear-gradient(93.61deg, #AB5BDB 23.85%, #FFA370 55.85%);
+          //-webkit-background-clip: text;
+          //-webkit-text-fill-color: transparent;
+          //background-clip: text;
+          //text-fill-color: transparent;
+
+        }
 
         //
         //&:after {
