@@ -601,18 +601,8 @@
 
   background: #3600FF;
 
-  padding: 21.7rem 37.6rem 16.8rem 19.5rem;
+  padding: 18.7rem 0 19.8rem;
   position: relative;
-
-
-  @media screen and (max-width: 1650px) {
-    padding: 21.7rem 19.5rem 16.8rem 19.5rem;
-  }
-
-
-  @media screen and (max-width: 1450px) {
-    padding: 21.7rem 0 16.8rem;
-  }
 
 
   @media screen and (max-width: 1000px) {
@@ -641,11 +631,11 @@
     z-index: 10;
     position: relative;
 
-    //width: 70.3125%;
+    width: 70.3125%;
+    margin: 0 auto;
 
     @media screen and (max-width: 1450px) {
       width: 76.7%;
-      margin: 0 auto;
     }
 
     @media screen and (max-width: 500px) {
