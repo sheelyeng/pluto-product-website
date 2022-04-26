@@ -72,8 +72,8 @@ const Features = () => {
   }, [isMobile]);
 
   useEffect(() => {
-    if (window.outerWidth <= 500) setIsMobile(true);
-    else if (window.outerWidth <= 1650 && window.outerWidth >= 600) setIsScreenMD(true);
+    if (window.innerWidth <= 500) setIsMobile(true);
+    else if (window.innerWidth <= 1650 && window.innerWidth >= 600) setIsScreenMD(true);
   }, []);
 
   useEffect(() => {

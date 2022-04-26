@@ -88,8 +88,6 @@ const HeroFront = () => {
       </>
     );
 
-    console.log(data);
-
     return data;
   }, []);
 

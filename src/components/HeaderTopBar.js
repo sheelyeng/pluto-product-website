@@ -66,7 +66,7 @@ function HeaderTopBar() {
       setShowNav(false);
     } else {
       // Scroll Up - Show Nav
-      if (st + window.outerHeight < document.documentElement.scrollHeight) {
+      if (st + window.innerHeight < document.documentElement.scrollHeight) {
         setShowNav(true);
       }
     }
