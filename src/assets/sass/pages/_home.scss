@@ -40,7 +40,7 @@
     }
 
     @media screen and (max-width: 600px) {
-      width: 88.8%;
+      width: 89%;
       min-width: unset;
       margin-top: 23.3rem;
     }
@@ -70,6 +70,14 @@
         font-size: 5.5rem;
       }
 
+      @media screen and (max-width: 600px) {
+        font-size: 5.3rem;
+      }
+
+
+      @media screen and (max-width: 400px) {
+        font-size: 4rem;
+      }
 
       & * {
         display: inline-block;
@@ -124,98 +132,124 @@
         //background-clip: text;
         //text-fill-color: transparent;
 
-        span{
-          //background: #FFFFFF;
-          //background: linear-gradient(93.61deg, #AB5BDB 23.85%, #FFA370 55.85%);
-
+        span.heroHeadlineLetter span {
+          position: relative;
+          z-index: 1000;
         }
 
 
+        span.heroHeadlineLetter.letter-f {
 
-        span.letter-f{
-          background: linear-gradient(93.61deg, #CB76B2 , #CE79AE );
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          text-fill-color: transparent;
+          span, &:after {
+            background: linear-gradient(93.61deg, #CB76B2, #CE79AE);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+          }
 
-        }
-        span.letter-a{
-          background: linear-gradient(93.61deg, #D57FA7 , #DE8799 );
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          text-fill-color: transparent;
-        }
-        span.letter-v{
-          background: linear-gradient(93.61deg, #DE8799 , #E88F8C );
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          text-fill-color: transparent;
-        }
-        span.letter-o{
-          background: linear-gradient(93.61deg, #EB928B , #F69B7B );
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          text-fill-color: transparent;
-        }
-        span.letter-r{
-          background: linear-gradient(93.61deg, #F69B7B , #FCA073 );
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          text-fill-color: transparent;
-        }
-        span.letter-i{
-          background: linear-gradient(93.61deg, #FDA172 , #FFA370 );
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          text-fill-color: transparent;
-        }
-        span.letter-t{
-          background: linear-gradient(93.61deg, #FFA470 , #FFA46F );
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          text-fill-color: transparent;
-        }
-        span.letter-e{
-          background: linear-gradient(93.61deg, #FFA36F , #FFA36F );
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          text-fill-color: transparent;
         }
 
+        span.letter-a {
+          span, &:after {
+            background: linear-gradient(93.61deg, #D57FA7, #DE8799);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+          }
+        }
+
+        span.letter-v {
+          span, &:after {
+            background: linear-gradient(93.61deg, #DE8799, #E88F8C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+          }
+        }
+
+        span.letter-o {
+          span, &:after {
+            background: linear-gradient(93.61deg, #EB928B, #F69B7B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+          }
+        }
+
+        span.letter-r {
+          span, &:after {
+            background: linear-gradient(93.61deg, #F69B7B, #FCA073);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+          }
+        }
+
+        span.letter-i {
+          span, &:after {
+            background: linear-gradient(93.61deg, #FDA172, #FFA370);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+          }
+        }
+
+        span.letter-t {
+          span, &:after {
+            background: linear-gradient(93.61deg, #FFA470, #FFA46F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+          }
+        }
+
+        span.letter-e {
+          span, &:after {
+            background: linear-gradient(93.61deg, #FFA36F, #FFA36F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+          }
+        }
 
 
-        //.heroHeadlineLetter:after {
-        //  content: attr(text);
-        //  display: inline-block;
-        //  position: absolute;
-        //  bottom: 0;
-        //  left: 0;
-        //  height: 100%;
-        //  width: 100%;
-        //  max-width: 100%;
-        //  transform: translate(-2.3%, 3%);
-        //
-        //  background: linear-gradient(93.61deg, #CB76B2 , #CE79AE );
-        //  -webkit-background-clip: text;
-        //  -webkit-text-fill-color: transparent;
-        //  background-clip: text;
-        //  text-fill-color: transparent;
-        //
-        //  //border: 1px solid red;
-        //  //color: red;
-        //  text-align: left;
-        //  letter-spacing: 0.011em;
-        //  //border: 1px solid red;
-        //}
+        .heroHeadlineLetter:after {
+          content: attr(text);
+          display: inline-block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          max-width: 100%;
+          transform: translate(-2.3%, 3%);
 
+          //background: linear-gradient(93.61deg, #CB76B2 , #CE79AE );
+          //background: red;
+          //-webkit-background-clip: text;
+          //-webkit-text-fill-color: transparent;
+          //background-clip: text;
+          //text-fill-color: transparent;
+
+          text-align: left;
+          letter-spacing: 0.011em;
+          opacity: 0.2;
+        }
+
+      }
+
+      .headlineTextLine:not(:last-of-type):after {
+        display: inline-block;
+        content: 'l';
+        opacity: 0;
       }
 
     }
@@ -237,6 +271,10 @@
       @media screen and (max-width: 600px) {
         margin: 2.1rem 0 6.7rem;
         width: 85%;
+      }
+
+      @media screen and (max-width: 400px) {
+        width: 100%;
       }
 
       & > div {
@@ -273,6 +311,9 @@
         align-items: center;
         gap: 0.9rem;
         height: 5.8rem;
+
+        //For Animation
+        transform: scale(0);
 
         img {
           width: 2.8rem;

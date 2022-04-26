@@ -57,8 +57,8 @@ const HeroFront = () => {
     }, 0);
   }, []);
 
-  const headline = useMemo(
-    () => (
+  const headline = useMemo(() => {
+    let data = (
       <>
         <SplitText
           LetterWrapper={({ children }) => <span className="heroHeadlineLetter">{children}</span>}>
@@ -79,13 +79,19 @@ const HeroFront = () => {
         </span>
         <span>&nbsp;</span>
         <SplitText
+          LineWrapper={({ children }) => (
+            <span className="d-inline headlineTextLine">{children}</span>
+          )}
           LetterWrapper={({ children }) => <span className="heroHeadlineLetter">{children}</span>}>
           companion for your NFT journey
         </SplitText>
       </>
-    ),
-    []
-  );
+    );
+
+    console.log(data);
+
+    return data;
+  }, []);
 
   const content = useMemo(
     () => (
