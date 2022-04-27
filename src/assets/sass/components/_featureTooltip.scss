@@ -62,11 +62,11 @@
     flex-flow: row wrap;
     justify-content: space-between;
     padding: 3.6rem 3.4rem 0 6.7rem;
+    position: relative;
 
 
     @media screen and (max-width: 1000px) {
       padding: 5.7rem 4.2rem 0 5.7rem;
-
     }
 
     @media screen and (max-width: 600px) {
@@ -78,7 +78,11 @@
       width: 52.5%;
       padding-bottom: 6rem;
 
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 1000px) {
+        padding-bottom: 4.2rem;
+      }
+
+      @media screen and (max-width: 700px) {
         width: 100%;
       }
 
@@ -127,19 +131,31 @@
 
       }
 
-
     }
 
 
     &__image {
       width: 38.5%;
+      //height: 33.3rem;
 
-      @media screen and (max-width: 600px) {
+      position: absolute;
+      top: 3.6rem;
+      right: 4.2rem;
+
+      @media screen and (max-width: 1000px) {
+        top: 6.5rem;
+        right: 3.4rem;
+      }
+
+      @media screen and (max-width: 700px) {
         display: none;
       }
 
       img {
         //object-fit: contain;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
       }
     }
 
@@ -181,6 +197,19 @@
 
 }
 
-.rc-tooltip-hidden {
-  display: none;
+.rc-tooltip{
+  animation-name: fadeIn;
+  animation-duration: 0.1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  backdrop-filter: blur(20.3526px);
 }
+
+.rc-tooltip-hidden {
+  animation-name: fadeOut;
+}
+
+
+@keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; visibility: visible; }}
+
+@keyframes fadeOut { 0% { opacity: 1; visibility: visible; } 100% { opacity: 0; visibility: hidden;  }}

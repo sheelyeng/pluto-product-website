@@ -102,18 +102,18 @@ const HeroContent = () => {
           {
             targets: '.sHero__bottom .sHero__bottom__content a',
             scale: ['0%', '100%'],
-            duration: 650,
-            easing: 'easeOutBounce'
+            duration: 500,
+            easing: 'easeOutBack'
           },
-          0
+          60
         )
         .add(
           {
             targets: '.sHero__bottom .contentHeadlineLetter',
             translateY: ['30%', '0%'],
             opacity: [0, 1],
-            duration: 350,
-            delay: anime.stagger(16),
+            duration: 300,
+            delay: anime.stagger(12),
             easing: 'easeOutSine'
           },
           0
@@ -123,25 +123,25 @@ const HeroContent = () => {
             targets: '.sHero__bottom .contentTextLetter',
             translateY: ['50%', '0%'],
             opacity: [0, 1],
-            duration: 200,
-            delay: anime.stagger(8),
+            duration: 180,
+            delay: anime.stagger(7),
             easing: 'easeOutSine'
           },
           1400 //10100
-        );
+        )
 
-      logoBoxTimeline.add({
-        targets: '.sHero__bottom .sHero__bottom__illustration__logoBox img',
-        rotate: ['0deg', '360deg'],
-        duration: 2000,
-        direction: 'alternate',
-        easing: 'linear',
-        changeComplete: () => {
-          setTimeout(() => {
-            logoBoxTimeline.restart();
-          }, 0);
-        }
-      });
+        .add({
+          targets: '.sHero__bottom .sHero__bottom__illustration__logoBox img',
+          rotate: ['0deg', '360deg'],
+          duration: 2000,
+          direction: 'alternate',
+          easing: 'linear',
+          changeComplete: () => {
+            setTimeout(() => {
+              logoBoxTimeline.restart();
+            }, 0);
+          }
+        });
 
       setIsAnimationApplied(true);
     }, 0);

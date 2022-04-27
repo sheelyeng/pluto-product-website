@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 import tick from '../assets/img/tick-white.png';
-import toolImg from '../assets/img/tooltip-tool.png';
+import toolImg from '../assets/img/tool-image.png';
 
 function FeatureTooltip({ title }) {
   return (

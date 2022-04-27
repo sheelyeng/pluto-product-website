@@ -38,8 +38,10 @@ const HeroFront = () => {
             targets: '.sHero__top .sHero__top__text .heroTextLetter',
             translateY: ['30%', '0%'],
             opacity: [0, 1],
-            duration: 350,
-            delay: anime.stagger(16),
+            // duration: 350,
+            // delay: anime.stagger(16),
+            duration: 300,
+            delay: anime.stagger(14),
             easing: 'easeOutSine'
           },
           1800
@@ -48,17 +50,17 @@ const HeroFront = () => {
           {
             targets: '.sHero__top .sHero__top__buttons .btn',
             scale: ['0%', '100%'],
-            duration: 430,
-            delay: anime.stagger(160),
+            duration: 450,
+            delay: anime.stagger(200),
             easing: 'easeOutBack'
           },
-          1970
+          1960
         );
     }, 0);
   }, []);
 
-  const headline = useMemo(() => {
-    let data = (
+  const headline = useMemo(
+    () => (
       <>
         <SplitText
           LetterWrapper={({ children }) => <span className="heroHeadlineLetter">{children}</span>}>
@@ -86,10 +88,9 @@ const HeroFront = () => {
           companion for your NFT journey
         </SplitText>
       </>
-    );
-
-    return data;
-  }, []);
+    ),
+    []
+  );
 
   const content = useMemo(
     () => (

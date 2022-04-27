@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import anime from 'animejs';
 import { SplitText } from '@cyriacbr/react-split-text';
 
@@ -23,7 +23,7 @@ function HeaderTopBar() {
           easing: 'easeOutSine'
         })
         .add({
-          targets: '.topBar h5 .topBarWord',
+          targets: '.topBar .topBar__link .topBarWord',
           translateY: ['100%', '0%'],
           opacity: [0, 1],
           duration: 750,
@@ -32,7 +32,7 @@ function HeaderTopBar() {
         })
         .add(
           {
-            targets: '.topBar h5 img',
+            targets: '.topBar .topBar__link img',
             translateX: ['-100%', '0%'],
             opacity: [0, 1],
             duration: 150,
@@ -74,13 +74,23 @@ function HeaderTopBar() {
     setLastScrollTop(st);
   };
 
+  const text = useMemo(
+    () => (
+      <SplitText LetterWrapper={({ children }) => <span className="topBarWord">{children}</span>}>
+        Get Started
+      </SplitText>
+    ),
+    []
+  );
+
   return (
     <div className={`topBar ${showNav ? 'showNav' : 'hideNav'}`}>
-      <img src={moonGradient} alt="Pluto" className="topBar__logo" />
+      <div className="topBar__logo">
+        <img src={moonGradient} alt="Pluto" />
+        <h5>Pluto</h5>
+      </div>
       <a href="#" className="topBar__link">
-        <SplitText LetterWrapper={({ children }) => <span className="topBarWord">{children}</span>}>
-          Get Started
-        </SplitText>
+        {text}
         <div className="imgCont">
           <img src={arrow} alt="arrow" />
         </div>

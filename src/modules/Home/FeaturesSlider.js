@@ -18,7 +18,7 @@ function FeaturesSlider() {
         mousewheel
         grabCursor
         autoplay={{ delay: 0, disableOnInteraction: false, waitForTransition: false }}
-        speed={1500}>
+        speed={2000}>
         {freeTools.map((item, index) => (
           <SwiperSlide key={index}>
             <FeatureSlide {...item} />

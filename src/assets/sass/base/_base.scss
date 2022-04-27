@@ -120,7 +120,8 @@ body {
   background-color: $color-bg;
   min-height: 100vh;
   position: relative;
-  //user-select: none;
+  user-select: none;
+  overflow-x: hidden;
 }
 
 img {

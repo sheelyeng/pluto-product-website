@@ -132,7 +132,7 @@
         //background-clip: text;
         //text-fill-color: transparent;
 
-        span.heroHeadlineLetter span {
+        span.heroHeadlineLetter,span.heroHeadlineLetter span {
           position: relative;
           z-index: 1000;
         }
@@ -527,6 +527,9 @@
         width: 81%;
       }
 
+      a{
+        transform: scale(0);
+      }
 
       h3 {
         font-weight: 800;
