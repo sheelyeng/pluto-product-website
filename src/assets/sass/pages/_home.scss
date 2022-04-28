@@ -793,11 +793,6 @@
   padding: 3.5rem 0;
   background-color: $color-bg-light;
 
-  @media screen and (max-width: 500px) {
-    padding: 4.8rem 0;
-  }
-
-
   .swiper-slide {
     width: auto !important;
     transition: opacity 0.1s linear;
