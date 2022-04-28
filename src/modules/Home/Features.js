@@ -23,6 +23,7 @@ const Features = () => {
 
   useEffect(() => {
     setTimeout(() => {
+      if (isAnimationApplied) return;
       timeline = anime.timeline({ autoplay: false });
 
       //16350
@@ -72,8 +73,11 @@ const Features = () => {
   }, [isMobile]);
 
   useEffect(() => {
-    if (window.innerWidth <= 500) setIsMobile(true);
-    else if (window.innerWidth <= 1650 && window.innerWidth >= 600) setIsScreenMD(true);
+    setDeviceWidth();
+    window.addEventListener('resize', setDeviceWidth);
+    return () => {
+      window.removeEventListener('resize', setDeviceWidth);
+    };
   }, []);
 
   useEffect(() => {
@@ -93,6 +97,14 @@ const Features = () => {
 
   const visibilityChangeHandler = (isVisible) => {
     setIsVisible(isVisible);
+  };
+
+  const setDeviceWidth = () => {
+    if (window.innerWidth <= 500) setIsMobile(true);
+    else setIsMobile(false);
+
+    if (window.innerWidth <= 1650 && window.innerWidth >= 600) setIsScreenMD(true);
+    else setIsScreenMD(false);
   };
 
   const headline = useMemo(
@@ -197,7 +209,7 @@ const PremiumToolsSlider = () => (
   <Swiper slidesPerView={1.33} spaceBetween={41} loop>
     {premiumTools.map((feat, index) => (
       <SwiperSlide key={index}>
-        <FeatureBox key={index} {...feat} />
+        <FeatureBox key={index} {...feat} isPremiumBoxes={true} />
       </SwiperSlide>
     ))}
   </Swiper>

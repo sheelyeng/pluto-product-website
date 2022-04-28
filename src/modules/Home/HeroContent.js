@@ -157,11 +157,14 @@ const HeroContent = () => {
   const animateSection = () => {
     if (isAnimated || !isVisible || !ref.current || !isAnimationApplied) return;
     setIsAnimated(true);
-    window.scrollTo({
-      top: ref.current.offsetTop - 200,
-      left: 0,
-      behavior: 'smooth'
-    });
+
+    if (ref.current.offsetTop + 100 > window.innerHeight) {
+      window.scrollTo({
+        top: ref.current.offsetTop - 200,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
     contentTimeline.play();
     logoBoxTimeline.play();
   };
