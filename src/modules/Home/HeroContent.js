@@ -128,20 +128,19 @@ const HeroContent = () => {
             easing: 'easeOutSine'
           },
           1400 //10100
-        )
-
-        .add({
-          targets: '.sHero__bottom .sHero__bottom__illustration__logoBox img',
-          rotate: ['0deg', '360deg'],
-          duration: 2000,
-          direction: 'alternate',
-          easing: 'linear',
-          changeComplete: () => {
-            setTimeout(() => {
-              logoBoxTimeline.restart();
-            }, 0);
-          }
-        });
+        );
+      logoBoxTimeline.add({
+        targets: '.sHero__bottom .sHero__bottom__illustration__logoBox img',
+        rotate: ['0deg', '360deg'],
+        duration: 2000,
+        direction: 'alternate',
+        easing: 'linear',
+        changeComplete: () => {
+          setTimeout(() => {
+            logoBoxTimeline.restart();
+          }, 0);
+        }
+      });
 
       setIsAnimationApplied(true);
     }, 0);
