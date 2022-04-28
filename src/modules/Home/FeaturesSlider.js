@@ -1,30 +1,17 @@
-import SwiperCore, { Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import Marquee from 'react-fast-marquee';
 
 import FeatureSlide from '../../components/FeatureSlide';
 
 import { freeTools } from '../../assets/data/toolsData';
 
 function FeaturesSlider() {
-  SwiperCore.use([Autoplay]);
-
   return (
     <section className="sFeatureSlider">
-      <Swiper
-        centeredSlides
-        slidesPerView={'auto'}
-        loop
-        mousewheel
-        grabCursor
-        autoplay={{ delay: 0, disableOnInteraction: false, waitForTransition: false }}
-        speed={2000}>
+      <Marquee speed={300} gradient={false}>
         {freeTools.map((item, index) => (
-          <SwiperSlide key={index}>
-            <FeatureSlide {...item} />
-          </SwiperSlide>
+          <FeatureSlide {...item} key={index} />
         ))}
-      </Swiper>
+      </Marquee>
     </section>
   );
 }

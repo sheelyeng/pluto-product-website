@@ -10,7 +10,8 @@ function FeatureBox({ title, icon, isScreenMD = false }) {
     // <Tooltip placement="bottom" overlay={<FeatureTooltip title={title} />}>
     <Tooltip
       placement={isScreenMD ? 'bottomLeft' : 'bottom'}
-      trigger={['hover']}
+      trigger={['click']}
+      // transitionName="rc-tooltip-zoom"
       overlay={<FeatureTooltip title={title} />}>
       <div className={`featureBox`}>
         <img src={icon} alt="" />
