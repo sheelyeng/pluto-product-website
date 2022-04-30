@@ -1,22 +1,47 @@
-import React from 'react';
-// import 'rc-tooltip/assets/bootstrap_white.css';
+import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import Tooltip from 'rc-tooltip';
 import FeatureTooltip from './FeatureTooltip';
+import ReactFreezeframe from 'react-freezeframe';
 
-function FeatureBox({ title, icon, isScreenMD = false, isPremiumBoxes = false }) {
+function FeatureBox({
+  title,
+  isScreenMD = false,
+  isPremiumBoxes = false,
+  boxName = '',
+  gif = '',
+  icon
+}) {
+  const ref = useRef();
+
+  const startAnimation = () => {
+    if (ref.current) ref.current.start();
+  };
+
+  const stopAnimation = () => {
+    if (ref.current) ref.current.stop();
+  };
+
   return (
-    // <div className={`featureBox ${isTextLg ? 'spacingSm' : ''}`}>
-    // <Tooltip placement="bottom" overlay={<FeatureTooltip title={title} />}>
     <Tooltip
       placement={isScreenMD || isPremiumBoxes ? 'bottomLeft' : 'bottom'}
       trigger={['hover']}
-      // transitionName="rc-tooltip-zoom"
       mouseLeaveDelay={0}
       mouseEnterDelay={0.1}
       overlay={<FeatureTooltip title={title} />}>
-      <div className={`featureBox`}>
-        <img src={icon} alt="" />
+      <div
+        className={`featureBox box-${boxName}`}
+        onMouseEnter={startAnimation}
+        onTouchStart={startAnimation}
+        onTouchEnd={stopAnimation}>
+        <div className="featureBox__imgBox featureBoxIcon">
+          {gif ? (
+            <ReactFreezeframe ref={ref} src={gif} options={{ trigger: false }} />
+          ) : (
+            <img src={icon} alt="" />
+          )}
+        </div>
+
         <h3>{title}</h3>
       </div>
     </Tooltip>
@@ -25,7 +50,9 @@ function FeatureBox({ title, icon, isScreenMD = false, isPremiumBoxes = false })
 
 FeatureBox.propTypes = {
   title: PropTypes.string,
-  icon: PropTypes.any,
+  boxName: PropTypes.string,
+  icon: PropTypes.string,
+  gif: PropTypes.string,
   isTextLg: PropTypes.bool,
   isScreenMD: PropTypes.bool,
   isPremiumBoxes: PropTypes.bool

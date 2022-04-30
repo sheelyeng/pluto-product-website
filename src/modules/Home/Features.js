@@ -162,7 +162,14 @@ const Features = () => {
             <div className="sFeatures__section__boxes">
               {!isMobile &&
                 freeTools.map((feat, index) => (
-                  <FeatureBox key={index} {...feat} isScreenMD={isScreenMD} />
+                  <FeatureBox
+                    key={index}
+                    {...feat}
+                    isScreenMD={isScreenMD}
+                    boxName={feat.title.toLowerCase().split(' ').join('-')}
+                    gif={feat.gif}
+                    icon={feat.icon}
+                  />
                 ))}
 
               {isMobile && (
@@ -179,7 +186,13 @@ const Features = () => {
             <div className="sFeatures__section__boxes">
               {!isMobile &&
                 premiumTools.map((feat, index) => (
-                  <FeatureBox key={index} {...feat} isScreenMD={isScreenMD} />
+                  <FeatureBox
+                    key={index}
+                    {...feat}
+                    isScreenMD={isScreenMD}
+                    boxName={feat.title.toLowerCase().split(' ').join('-')}
+                    icon={feat.icon}
+                  />
                 ))}
 
               {isMobile && (

@@ -8,40 +8,55 @@ import wallet from '../img/wallet-dynamic-gradient.png';
 import target from '../img/target-dynamic-gradient.png';
 import flash from '../img/flash-dynamic-gradient.png';
 
+import ethGif from '../img/gif/coin-alert.gif';
+import gasGif from '../img/gif/GasAlert.gif';
+import fileGif from '../img/gif/NFT_Address_Visualizer_.gif';
+import bellGif from '../img/gif/NFTAlert.gif';
+import lockerGif from '../img/gif/NFTAnalyzer.gif';
+import medalGif from '../img/gif/WebMarketplaceEnhancer.gif';
+import walletGif from '../img/gif/WalletWatching.gif';
+
 export const freeTools = [
   {
     title: 'Coin Tracker',
     icon: eth,
+    gif: ethGif,
     isTextLg: false
   },
   {
     title: 'Gas Alerts',
     icon: gas,
+    gif: gasGif,
     isTextLg: false
   },
   {
     title: 'NFT Address Visualizer',
     icon: file,
+    gif: fileGif,
     isTextLg: true
   },
   {
     title: 'NFT Alerts',
     icon: bell,
+    gif: bellGif,
     isTextLg: false
   },
   {
     title: 'NFT Analyzer',
     icon: locker,
+    gif: lockerGif,
     isTextLg: false
   },
   {
     title: 'Web Marketplace Enhancer',
     icon: medal,
+    gif: medalGif,
     isTextLg: true
   },
   {
     title: 'Wallet Watching',
     icon: wallet,
+    gif: walletGif,
     isTextLg: false
   }
 ];

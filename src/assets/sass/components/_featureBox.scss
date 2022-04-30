@@ -23,12 +23,28 @@
     gap: 1.4rem;
   }
 
-  img {
+
+  &__imgBox{
     min-width: 12rem;
     min-height: 12rem;
     width: 12rem;
     height: 12rem;
+
+    //background-size: 330rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 100%;
+
+    img {
+      min-width: 12rem;
+      min-height: 12rem;
+      width: 12rem;
+      height: 12rem;
+    }
+
+
   }
+
 
   h3 {
     font-weight: 800;
@@ -54,4 +70,18 @@
     //cursor: pointer;
   }
 
+}
+
+
+.featureBox.box-coin-tracker{
+  .featureBoxIcon{
+    //background-image: url("../../img/eth-dynamic-gradient.png");
+
+  }
+
+  //&:hover{
+  //  .featureBoxIcon{
+  //    background-image: url("../../img/gif/CoinAlert-1.gif?acds");
+  //  }
+  //}
 }
