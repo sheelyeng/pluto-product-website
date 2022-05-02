@@ -224,11 +224,12 @@
 
 .rc-tooltip-hidden {
   animation-name: fadeOut;
+  animation-duration: 0s;
 }
 
 
 
 
-@keyframes fadeIn { to { opacity: 1; visibility: visible; }}
+@keyframes fadeIn { to { visibility: visible; }}
 
-@keyframes fadeOut { to { opacity: 0; visibility: hidden }}
+@keyframes fadeOut { to { visibility: hidden }}

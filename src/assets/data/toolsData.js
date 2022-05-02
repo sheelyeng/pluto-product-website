@@ -15,6 +15,8 @@ import bellGif from '../img/gif/NFTAlert.gif';
 import lockerGif from '../img/gif/NFTAnalyzer.gif';
 import medalGif from '../img/gif/WebMarketplaceEnhancer.gif';
 import walletGif from '../img/gif/WalletWatching.gif';
+import targetGif from '../img/gif/OSQuick.gif';
+import flashGif from '../img/gif/SmartContractExecutor.gif';
 
 export const freeTools = [
   {
@@ -65,11 +67,13 @@ export const premiumTools = [
   {
     title: 'OpenSea Quick Buy Sniper',
     icon: target,
+    gif: targetGif,
     isTextLg: true
   },
   {
     title: 'Smart Contract Executor',
     icon: flash,
+    gif: flashGif,
     isTextLg: true
   }
 ];
