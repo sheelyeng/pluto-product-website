@@ -169,6 +169,7 @@ const Features = () => {
                     boxName={feat.title.toLowerCase().split(' ').join('-')}
                     gif={feat.gif}
                     icon={feat.icon}
+                    index={index}
                   />
                 ))}
 
@@ -192,6 +193,7 @@ const Features = () => {
                     isScreenMD={isScreenMD}
                     boxName={feat.title.toLowerCase().split(' ').join('-')}
                     icon={feat.icon}
+                    index={7 + index}
                   />
                 ))}
 
@@ -212,7 +214,7 @@ const FreeToolsSlider = () => (
   <Swiper slidesPerView={1.408} spaceBetween={37} loop centeredSlides>
     {freeTools.map((feat, index) => (
       <SwiperSlide key={index}>
-        <FeatureBox key={index} {...feat} />
+        <FeatureBox key={index} {...feat} index={index} />
       </SwiperSlide>
     ))}
   </Swiper>
@@ -222,7 +224,7 @@ const PremiumToolsSlider = () => (
   <Swiper slidesPerView={1.33} spaceBetween={41} loop>
     {premiumTools.map((feat, index) => (
       <SwiperSlide key={index}>
-        <FeatureBox key={index} {...feat} isPremiumBoxes={true} />
+        <FeatureBox key={index} {...feat} isPremiumBoxes={true} index={7 + index} />
       </SwiperSlide>
     ))}
   </Swiper>

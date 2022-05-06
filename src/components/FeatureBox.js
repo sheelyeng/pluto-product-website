@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import Tooltip from 'rc-tooltip';
 import FeatureTooltip from './FeatureTooltip';
@@ -10,9 +10,18 @@ function FeatureBox({
   isPremiumBoxes = false,
   boxName = '',
   gif = '',
-  icon
+  icon,
+  index
 }) {
   const ref = useRef();
+
+  useEffect(() => {
+    const inc = index * 150;
+    const timer = setInterval(() => {
+      startAnimation();
+    }, 5000 + inc);
+    return () => clearInterval(timer);
+  }, []);
 
   const startAnimation = () => {
     if (ref.current) ref.current.start();
@@ -55,7 +64,8 @@ FeatureBox.propTypes = {
   gif: PropTypes.string,
   isTextLg: PropTypes.bool,
   isScreenMD: PropTypes.bool,
-  isPremiumBoxes: PropTypes.bool
+  isPremiumBoxes: PropTypes.bool,
+  index: PropTypes.number
 };
 
 export default FeatureBox;
